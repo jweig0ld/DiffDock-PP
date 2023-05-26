@@ -6,10 +6,11 @@ NUM_FOLDS=1  # number of seeds to try, default 5
 SEED=0  # initial seed
 CUDA=0  # will use GPUs from CUDA to CUDA + NUM_GPU - 1
 NUM_GPU=1
-BATCH_SIZE=2  # split across all GPUs
+BATCH_SIZE=1  # split across all GPUs
 
-NAME="dips_esm"  # change to name of config file
-RUN_NAME="large_model_dips" # should uniauely describe the current experiment
+# NAME="dips_esm"  # change to name of config file
+NAME="db5_esm" # JAMIE: Changed to run DB5.5.
+RUN_NAME="large_model_db5" # should uniauely describe the current experiment
 CONFIG="config/${NAME}.yaml"
 
 SAVE_PATH="ckpts/${RUN_NAME}"
