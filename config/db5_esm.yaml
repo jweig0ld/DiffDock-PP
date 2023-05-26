@@ -27,7 +27,7 @@
      tr_weight: 0.5
      rot_weight: 0.5
      tor_weight: 0.
-     val_inference_freq: 5
+     val_inference_freq: 60
      num_steps: 40
  diffusion:
      tr_s_min: 0.01
