@@ -270,6 +270,19 @@ class Loader:
             self.esm_model = None
             data_params["num_residues"] = len(tokenizer)
             data_params["tokenizer"] = tokenizer
+
+            # JAMIE: It appears that they forgot to assign the tokenized
+            # `x` attribute to the data object. I'm adding it here.
+            for pdb in data.keys():
+            # for pdb, (rec_rep, lig_rep) in path_to_rep.items():
+                rec_graph = data[pdb]["graph"]["receptor"]
+                lig_graph = data[pdb]["graph"]["ligand"]
+                rec_rep = data[pdb]["receptor_seq"]
+                lig_rep = data[pdb]["ligand_seq"]
+                rec_graph.x = rec_rep
+                lig_graph.x = lig_rep
+                assert len(rec_graph.pos) == len(rec_graph.x)
+                
             printt("finished tokenizing residues")
 
         #### protein sequence tokenization

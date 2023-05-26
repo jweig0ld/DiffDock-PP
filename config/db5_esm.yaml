@@ -10,7 +10,7 @@
      model_type: e3nn
      no_torsion: True
      no_batch_norm: True
-     lm_embed_dim: 1280
+     lm_embed_dim: 0
      dropout: 0.0
      dynamic_max_cross: True
      cross_cutoff_weight: 3
